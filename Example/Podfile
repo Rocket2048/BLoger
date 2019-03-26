@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'BLoger_Example' do
+  pod 'BLoger', :path => '../'
+
+  target 'BLoger_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

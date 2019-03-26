@@ -1,0 +1,16 @@
+PODS:
+  - BLoger (0.1.0)
+
+DEPENDENCIES:
+  - BLoger (from `../`)
+
+EXTERNAL SOURCES:
+  BLoger:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BLoger: 27df887fe57bc1a33fb1d6c750750ebc7b1c6e93
+
+PODFILE CHECKSUM: be6b5a92d616ebe3394340ad5b4b1ccfa9122810
+
+COCOAPODS: 1.7.0.beta.2
