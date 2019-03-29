@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -33,6 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BLog_g()
         
         BLog("------------启动应用---------------")
+        BLog_i(BLoger.shared.fileLogger.currentLogFileInfo.description) // Log文件信息
+    
+        BLogAutoTask.shared.start()
+        BLoger.shared.shankShow = true
         
         return true
     }

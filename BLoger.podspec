@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BLoger'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'A Loger Demo of CocoaLumberjack/Swift'
   s.swift_version    = '4.0'
 

@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    
+        
     //开始摇晃
     override open func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         

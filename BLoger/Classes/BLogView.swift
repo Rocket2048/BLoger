@@ -36,7 +36,7 @@ class BLogView: UIView {
         lb.textColor = .white
         lb.font = UIFont.systemFont(ofSize: 12)
         lb.textAlignment = .center
-        lb.text = "点我拖拽"
+        lb.text = "点我可拖拽"
         
         let view = UIView()
         view .addSubview(lb)
@@ -129,7 +129,9 @@ class BLogView: UIView {
             return
         }
         
-        self.frame = CGRect(x: 0, y: 0, width: min(300, disView.bounds.size.width - 20), height: min(400, disView.bounds.size.height - 20))
+        let maxHeight = min(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height) - 40
+        
+        self.frame = CGRect(x: 0, y: 0, width: min(maxHeight * 0.8, disView.bounds.size.width - 20), height: min(maxHeight, disView.bounds.size.height - 20))
         self.center = disView.center
         disView.addSubview(self)
         
@@ -209,6 +211,22 @@ class BLogView: UIView {
         textView.text = str
         textView.scrollRangeToVisible(NSRange.init(location: textView.text.lengthOfBytes(using: .utf8), length: 1))
     }
+    
+    func adapterScreen() {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            
+            var rect = self.frame
+            if let superview = self.superview {
+                rect.origin.x = min(rect.origin.x, superview.bounds.size.width - 100)
+                rect.origin.y = min(rect.origin.y, superview.bounds.size.height - 60)
+            }
+            
+            rect.origin.x = max(rect.origin.x, -rect.size.width + 100)
+            rect.origin.y = max(rect.origin.y, 20)
+            self.frame = rect
+        }
+    }
 }
 
 extension BLogView {
@@ -237,19 +255,8 @@ extension BLogView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        var rect = frame
-        
-        if let superview = superview {
-            rect.origin.x = min(rect.origin.x, superview.bounds.size.width - 100)
-            rect.origin.y = min(rect.origin.y, superview.bounds.size.height - 60)
-        }
-        
-        rect.origin.x = max(rect.origin.x, -rect.size.width + 100)
-        rect.origin.y = max(rect.origin.y, 20)
-
-        frame = rect
+        adapterScreen()
         
         isMoving = false
-
     }
 }

@@ -16,6 +16,11 @@ public class BLoger {
     
     init() {
 
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedRotation), name: .UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     /// 摇一摇显示
@@ -32,7 +37,6 @@ public class BLoger {
     public let fileLogger: DDFileLogger = {
         
         let fileLogger = DDFileLogger()
-        
         let fileFormat = JYFileLogFormatter()
         fileLogger.logFormatter = fileFormat
         
@@ -43,15 +47,12 @@ public class BLoger {
     public let fileLogger2: DDFileLogger = {
         
         let path = "\(NSHomeDirectory())/Library/Preferences/Logs"
-        
         if FileManager.default.fileExists(atPath: path) == false {
             try? FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
         }
         
         let manager = DDLogFileManagerDefault(logsDirectory: path)
-        
         let fileLogger = DDFileLogger.init(logFileManager: manager)
-        
         let fileFormat = JYFileLogFormatter2()
         fileLogger.logFormatter = fileFormat
         
@@ -97,16 +98,11 @@ public class BLoger {
     /// 获取当前日志（字符串）
     func getNewDoc() -> String? {
         
-        //BLog(BLoger.shared.fileLogger.currentLogFileInfo.description)
-        
         let url = URL(fileURLWithPath: BLoger.shared.fileLogger.currentLogFileInfo.filePath)
-        
         guard let data = try? Data(contentsOf: url) else {
             return nil
         }
-        
         let str = String.init(data: data, encoding: .utf8)
-        
         return str
     }
     
@@ -116,16 +112,18 @@ public class BLoger {
         if BLoger.shared.maxMessageSize == 0 {
             return msg
         }
-        
         var msg = msg.replacingOccurrences(of: "\n", with: " ")
         msg = msg.replacingOccurrences(of: "--[", with: "__[")
-        // msg = msg.replacingOccurrences(of: "]>-", with: "]>_")
 
         if msg.count <= BLoger.shared.maxMessageSize {
             return msg
         }
-        
         return "\(String(msg.prefix(Int(BLoger.shared.maxMessageSize))))...\(msg.count)"
+    }
+    
+    @objc fileprivate func receivedRotation() {
+        
+        logView.adapterScreen()
     }
 }
 

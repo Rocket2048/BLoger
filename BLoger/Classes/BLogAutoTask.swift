@@ -13,7 +13,7 @@ public class BLogAutoTask {
     
     public static let shared = BLogAutoTask()
     
-    public var started = false
+    public private(set) var started = false
     
     fileprivate var timer: Timer?
     
