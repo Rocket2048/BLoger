@@ -5,11 +5,35 @@
 [![License](https://img.shields.io/cocoapods/l/BLoger.svg?style=flat)](https://cocoapods.org/pods/BLoger)
 [![Platform](https://img.shields.io/cocoapods/p/BLoger.svg?style=flat)](https://cocoapods.org/pods/BLoger)
 
+# Demo screenshot
+
+<img src="https://github.com/iosBob/BLDoc/blob/master/BLoger/bl001.png" width="375"/>
+<img src="https://github.com/iosBob/BLDoc/blob/master/BLoger/bl002.png" width="375"/>
+
+# How to use
+
+```swift
+        // 初始化LOG
+        let config = BLogConfig()
+        // config.maxMessageSize = 500 // 每条message最大字符限制,会把回车转空格
+        BLoger.shared.start(config)
+        BLoger.shared.shankShow = true // 摇一摇显示LogView
+        
+        // 验证日志格式
+        BLog()
+        BLog_v("Verbose")
+        BLog_d("Debug")
+        BLog_i("Info")
+        BLog_w("Warn")
+        BLog_e("Error")
+        BLog_g()
+        
+        BLog("------------启动应用---------------")
+```
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
