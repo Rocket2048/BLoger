@@ -9,34 +9,23 @@
 Pod::Spec.new do |s|
   s.name             = 'BLoger'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of BLoger.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'A Loger Demo of CocoaLumberjack/Swift'
+  s.swift_version    = '4.0'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+A Loger Demo of CocoaLumberjack/Swift.
                        DESC
 
-  s.homepage         = 'https://github.com/ok@linbok.com/BLoger'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/iosBob/BLoger'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'ok@linbok.com' => 'bo.lin@juneyaokc.com' }
-  s.source           = { :git => 'https://github.com/ok@linbok.com/BLoger.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'BLoger/Classes/**/*'
+  s.author           = { 'linbo' => 'ok@linbok.com' }
+  s.source           = { :git => 'https://github.com/iosBob/BLoger.git', :tag => s.version.to_s }
   
-  # s.resource_bundles = {
-  #   'BLoger' => ['BLoger/Assets/*.png']
-  # }
+  s.ios.deployment_target = '8.0'
+  s.source_files = 'BLoger/Classes/**/*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit', 'Foundation'
+  s.dependency 'CocoaLumberjack/Swift'
+  s.dependency 'SnapKit'
+  
 end
