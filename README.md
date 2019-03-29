@@ -12,6 +12,9 @@
 
 # How to use
 
+
+AppDelegate application func Initialization BLoger
+
 ```swift
         // 初始化LOG
         let config = BLogConfig()
