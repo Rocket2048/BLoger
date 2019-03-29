@@ -46,7 +46,7 @@ pod 'BLoger'
 
 ## Author
 
-ok@linbok.com, bo.lin@juneyaokc.com
+linbo, ok@linbok.com
 
 ## License
 
