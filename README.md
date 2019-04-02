@@ -8,8 +8,7 @@
 # Demo screenshot
 
 <table><tr>
-<td><img src="https://github.com/iosBob/BLDoc/blob/master/BLoger/bl001.png" width="375"/></td>
-<td><img src="https://github.com/iosBob/BLDoc/blob/master/BLoger/bl002.png" width="375"/></td>
+<td><img src="https://github.com/iosBob/BLDoc/blob/master/BLoger/bl003.png" width="375"/></td>
 </tr></table>
 
 
