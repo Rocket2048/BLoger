@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/BLoger.svg?style=flat)](https://cocoapods.org/pods/BLoger)
 [![License](https://img.shields.io/cocoapods/l/BLoger.svg?style=flat)](https://cocoapods.org/pods/BLoger)
 [![Platform](https://img.shields.io/cocoapods/p/BLoger.svg?style=flat)](https://cocoapods.org/pods/BLoger)
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
 # Demo screenshot
 
