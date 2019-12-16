@@ -55,8 +55,6 @@ public class BLogAutoTask {
         case 4:
             BLog_w("\(random)")
         case 5:
-            BLog_g("\(random)")
-        case 6:
             BLog_e("\(random)")
         default:
             BLog("\(random)")

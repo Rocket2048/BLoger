@@ -78,19 +78,6 @@ public func BLog_i(_ info: @autoclosure () -> String = "-",
     _BLog(info, level: level, flag: .info, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
 }
 
-/// Guard (info)
-public func BLog_g(_ `guard`: @autoclosure () -> String = "-",
-                   level: DDLogLevel = DDDefaultLogLevel,
-                   context: Int = 0,
-                   file: StaticString = #file,
-                   function: StaticString = #function,
-                   line: UInt = #line,
-                   tag: Any? = nil,
-                   asynchronous async: Bool = false,
-                   ddlog: DDLog = .sharedInstance) {
-    _BLog(`guard`, level: level, flag: .info, context: context, file: file, function: function, line: line, tag: "guard", asynchronous: async, ddlog: ddlog)
-}
-
 /// Warning
 public func BLog_w(_ warning: @autoclosure () -> String = "-",
                    level: DDLogLevel = DDDefaultLogLevel,

@@ -11,48 +11,62 @@ import CocoaLumberjack
 
 enum BLogFlag: String {
     
-    case verbose    = "v"
-    case debug      = "d"
-    case info       = "i"
-    case warning    = "w"
-    case error      = "e"
-    case `guard`    = "g"
-    case none       = "-"
+    case verbose    = "1"
+    case debug      = "2"
+    case info       = "3"
+    case warning    = "4"
+    case error      = "5"
+    case none       = "0"
     
-    /// 返回一个简化的标记: v/d/i...
-    public static func flagString(_ log: DDLogMessage) -> String {
+    public var flag: String {
         
-        if let tag = log.tag as? String, tag == "guard" {
-            return BLogFlag.guard.rawValue
+        switch self {
+        case .verbose:
+            return "🍏"
+        case .debug:
+            return "🛠"
+        case .info:
+            return "🥏"
+        case .warning:
+            return "⚠️"
+        case .error:
+            return "🚫"
+        case .none:
+            return "➡️"
         }
+    }
+    
+    /// 返回一个简化的标记
+    public static func flag(_ log: DDLogMessage) -> BLogFlag {
+
         if let tag = log.tag as? String, tag == "none" {
-            return BLogFlag.none.rawValue
+            return BLogFlag.none
         }
 
         let flag = log.flag
 
         switch flag {
         case DDLogFlag.verbose:
-            return BLogFlag.verbose.rawValue
+            return BLogFlag.verbose
         case DDLogFlag.debug:
-            return BLogFlag.debug.rawValue
+            return BLogFlag.debug
         case DDLogFlag.info:
-            return BLogFlag.info.rawValue
+            return BLogFlag.info
         case DDLogFlag.warning:
-            return BLogFlag.warning.rawValue
+            return BLogFlag.warning
         case DDLogFlag.error:
-            return BLogFlag.error.rawValue
+            return BLogFlag.error
         default:
-            return BLogFlag.none.rawValue
+            return BLogFlag.none
         }
     }
-    
+
     /// 时间格式
     static fileprivate func dateToLocalStr(_ date: Date) -> String {
         
         let formatter = DateFormatter()
         formatter.dateStyle = .full
-        formatter.dateFormat = "yyyy-MM-dd_HH:mm:ss"
+        formatter.dateFormat = "yyMMdd.HHmmss"
         
         return formatter.string(from: date)
     }
@@ -79,7 +93,7 @@ class BLogFormatter: NSObject, DDLogFormatter {
         
         let funcStr = BLogFlag.funcCut(logMessage.function)
 
-        return "--[\(BLogFlag.flagString(logMessage)) \(logMessage.fileName) \(funcStr) L:\(logMessage.line)] \(logMessage.message)"
+        return "\(BLogFlag.flag(logMessage).flag)[\(BLogFlag.flag(logMessage).rawValue) \(logMessage.fileName) \(funcStr) L:\(logMessage.line)] \(logMessage.message)"
     }
 }
 
@@ -94,7 +108,7 @@ class JYFileLogFormatter: NSObject, DDLogFormatter {
         
         let message = BLoger.convertMessage(msg: logMessage.message)
 
-        return "--[\(BLogFlag.flagString(logMessage)) \(dateStr) \(logMessage.fileName) \(funcStr) L:\(logMessage.line)] \(message)"
+        return "\(BLogFlag.flag(logMessage).flag)[\(BLogFlag.flag(logMessage).rawValue) \(dateStr) \(logMessage.fileName) \(funcStr) L:\(logMessage.line)] \(message)"
     }
 }
 
@@ -109,6 +123,6 @@ class JYFileLogFormatter2: NSObject, DDLogFormatter {
         
         let message = BLoger.convertMessage(msg: logMessage.message)
         
-        return "--[\(BLogFlag.flagString(logMessage)) \(dateStr) \(logMessage.fileName) \(funcStr) L:\(logMessage.line)] \(message)"
+        return "\(BLogFlag.flag(logMessage).flag)[\(BLogFlag.flag(logMessage).rawValue) \(dateStr) \(logMessage.fileName) \(funcStr) L:\(logMessage.line)] \(message)"
     }
 }

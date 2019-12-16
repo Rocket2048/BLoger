@@ -23,8 +23,8 @@ class BLogView: UIView {
         let btn = UIButton.init(type: .custom)
         btn.backgroundColor = UIColor.init(white: 0, alpha: 0.6)
         btn.setTitleColor(.white, for: .normal)
-        btn.setTitle("X", for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        btn.setTitle("❌", for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         btn.addTarget(self, action: #selector(cancelAction(_:)), for: .touchUpInside)
         return btn
     }()
@@ -36,7 +36,7 @@ class BLogView: UIView {
         lb.textColor = .white
         lb.font = UIFont.systemFont(ofSize: 12)
         lb.textAlignment = .center
-        lb.text = "点我可拖拽"
+        lb.text = "Drag me"
         
         let view = UIView()
         view .addSubview(lb)

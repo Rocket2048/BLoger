@@ -63,9 +63,10 @@ public class BLoger {
     private var maxMessageSize: UInt = 0
     
     /// 开启（配置）
-    public func start(_ config: BLogConfig) {
+    public func start(_ config: BLogConfig = BLogConfig()) {
         
         let format = BLogFormatter()
+        /// 下面功能有待确认，请忽略
         // DDTTYLogger.sharedInstance.logFormatter = format
         // DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
 
@@ -112,8 +113,8 @@ public class BLoger {
         if BLoger.shared.maxMessageSize == 0 {
             return msg
         }
-        var msg = msg.replacingOccurrences(of: "\n", with: " ")
-        msg = msg.replacingOccurrences(of: "--[", with: "__[")
+        
+        let msg = msg.replacingOccurrences(of: "\n", with: " ")
 
         if msg.count <= BLoger.shared.maxMessageSize {
             return msg

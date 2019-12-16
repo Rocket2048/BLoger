@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BLoger
 
 class ViewController: UIViewController {
 
