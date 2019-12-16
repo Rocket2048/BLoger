@@ -6,6 +6,6 @@ target 'BLoger_Example' do
 
   pod 'CocoaLumberjack/Swift'
   pod 'SnapKit'
-  pod 'BLoger'
+  pod 'BLoger', :path => '../'
 
 end
