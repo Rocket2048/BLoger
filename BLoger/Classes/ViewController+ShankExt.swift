@@ -18,10 +18,6 @@ extension UIViewController {
     //摇晃结束
     override open func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
 
-        #if RELEASE
-
-        #else
-        
         if BLoger.shared.shankShow {
             if #available(iOS 10.0, *) {
                 let imp = UIImpactFeedbackGenerator.init(style: .medium)
@@ -32,8 +28,6 @@ extension UIViewController {
             }
             BLoger.shared.showLogView()
         }
-        
-        #endif
     }
     
     //摇晃被意外终止
