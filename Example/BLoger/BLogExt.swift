@@ -51,3 +51,11 @@ public func ELog(_ message: @autoclosure () -> String = "-",
                  line: UInt = #line) {
     BLog_e(message(), file: file, function: function, line: line)
 }
+
+/// 可专门在Guard return 前调用，定位判断条件
+public func GLog(_ message: @autoclosure () -> String = "-",
+                 file: StaticString = #file,
+                 function: StaticString = #function,
+                 line: UInt = #line) {
+    BLog_w("❗️\(message())", file: file, function: function, line: line)
+}

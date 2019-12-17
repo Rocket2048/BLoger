@@ -59,6 +59,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ALog("abcdefg")
         ILog(BLoger.shared.fileLogger.currentLogFileInfo.description) // Log文件信息
         
+        var text: String?
+        text = nil
+        guard let _ = text else {
+            GLog()
+            return true
+        }
+        
         return true
     }
 
