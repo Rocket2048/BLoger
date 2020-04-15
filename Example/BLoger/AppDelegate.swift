@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         WLog("Warn")
         ELog("Error")
         ALog("abcdefg")
-        ILog(BLoger.shared.fileLogger.currentLogFileInfo.description) // Log文件信息
+        ILog(BLoger.shared.fileLogger.currentLogFileInfo?.description ?? "-") // Log文件信息
         
         var text: String?
         text = nil

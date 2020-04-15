@@ -99,7 +99,10 @@ public class BLoger {
     /// 获取当前日志（字符串）
     func getNewDoc() -> String? {
         
-        let url = URL(fileURLWithPath: BLoger.shared.fileLogger.currentLogFileInfo.filePath)
+        guard let path = BLoger.shared.fileLogger.currentLogFileInfo?.filePath else {
+            return nil
+        }
+        let url = URL(fileURLWithPath: path)
         guard let data = try? Data(contentsOf: url) else {
             return nil
         }
