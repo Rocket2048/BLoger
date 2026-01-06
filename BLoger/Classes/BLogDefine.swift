@@ -23,7 +23,7 @@ fileprivate func _BLog(_ message: @autoclosure () -> String,
                        asynchronous async: Bool = false,
                        ddlog: DDLog = .sharedInstance) {
     
-    _DDLogMessage(message, level: level, flag: flag, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
+    _DDLogMessage(message(), level: level, flag: flag, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
 }
 
 /// Default (Verbose)
@@ -36,7 +36,7 @@ public func BLog(_ message: @autoclosure () -> String = "-",
                  tag: Any? = nil,
                  asynchronous async: Bool = false,
                  ddlog: DDLog = .sharedInstance) {
-    _BLog(message, level: level, flag: .verbose, context: context, file: file, function: function, line: line, tag: "none", asynchronous: async, ddlog: ddlog)
+    _BLog(message(), level: level, flag: .verbose, context: context, file: file, function: function, line: line, tag: "none", asynchronous: async, ddlog: ddlog)
 }
 
 /// Verbose
@@ -49,7 +49,7 @@ public func BLog_v(_ verbose: @autoclosure () -> String = "-",
                    tag: Any? = nil,
                    asynchronous async: Bool = false,
                    ddlog: DDLog = .sharedInstance) {
-    _BLog(verbose, level: level, flag: .verbose, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
+    _BLog(verbose(), level: level, flag: .verbose, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
 }
 
 /// Debug
@@ -62,7 +62,7 @@ public func BLog_d(_ debug: @autoclosure () -> String = "-",
                    tag: Any? = nil,
                    asynchronous async: Bool = false,
                    ddlog: DDLog = .sharedInstance) {
-    _BLog(debug, level: level, flag: .debug, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
+    _BLog(debug(), level: level, flag: .debug, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
 }
 
 /// Info
@@ -75,7 +75,7 @@ public func BLog_i(_ info: @autoclosure () -> String = "-",
                    tag: Any? = nil,
                    asynchronous async: Bool = false,
                    ddlog: DDLog = .sharedInstance) {
-    _BLog(info, level: level, flag: .info, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
+    _BLog(info(), level: level, flag: .info, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
 }
 
 /// Warning
@@ -88,7 +88,7 @@ public func BLog_w(_ warning: @autoclosure () -> String = "-",
                    tag: Any? = nil,
                    asynchronous async: Bool = false,
                    ddlog: DDLog = .sharedInstance) {
-    _BLog(warning, level: level, flag: .warning, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
+    _BLog(warning(), level: level, flag: .warning, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
 }
 
 /// Error
@@ -101,5 +101,5 @@ public func BLog_e(_ error: @autoclosure () -> String = "-",
                    tag: Any? = nil,
                    asynchronous async: Bool = false,
                    ddlog: DDLog = .sharedInstance) {
-    _BLog(error, level: level, flag: .error, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
+    _BLog(error(), level: level, flag: .error, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, ddlog: ddlog)
 }

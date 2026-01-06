@@ -8,20 +8,20 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BLoger'
-  s.version          = '2.0.1'
+  s.version          = '3.0.0'
   s.summary          = 'A Loger Demo of CocoaLumberjack/Swift'
-  s.swift_version    = '4.0'
+  s.swift_version    = '5.0'
 
   s.description      = <<-DESC
   A Loger Demo of CocoaLumberjack Swift.
                        DESC
 
-  s.homepage         = 'https://github.com/iosBob/BLoger'
+  s.homepage         = 'https://github.com/Rocket2048/BLoger'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'linbo' => 'ok@linbok.com' }
-  s.source           = { :git => 'https://github.com/iosBob/BLoger.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Rocket2048/BLoger', :tag => s.version.to_s }
   
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '12.0'
   s.source_files = 'BLoger/Classes/**/*'
 
   s.frameworks = 'UIKit', 'Foundation'

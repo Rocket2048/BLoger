@@ -1,16 +1,14 @@
 PODS:
-  - BLoger (2.0.0):
+  - BLoger (3.0.0):
     - CocoaLumberjack/Swift
     - SnapKit
-  - CocoaLumberjack/Core (3.6.1)
-  - CocoaLumberjack/Swift (3.6.1):
+  - CocoaLumberjack/Core (3.9.0)
+  - CocoaLumberjack/Swift (3.9.0):
     - CocoaLumberjack/Core
-  - SnapKit (4.2.0)
+  - SnapKit (5.7.1)
 
 DEPENDENCIES:
   - BLoger (from `../`)
-  - CocoaLumberjack/Swift
-  - SnapKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -22,10 +20,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BLoger: 0e97eb65ca171a64f801d2b4209ff09b0192dc13
-  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  BLoger: 61b678e41464d38924e22e37ffaf1a6faec64375
+  CocoaLumberjack: 5644158777912b7de7469fa881f8a3f259c2512a
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
 
-PODFILE CHECKSUM: 56a5e4ca960f1aef917422b02fc0246db4e4975e
+PODFILE CHECKSUM: 6f5d4265a02f747267697cc961d95510b9608f73
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.16.2

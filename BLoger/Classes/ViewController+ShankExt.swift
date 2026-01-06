@@ -11,12 +11,12 @@ import UIKit
 extension UIViewController {
         
     //开始摇晃
-    override open func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override open func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         
     }
     
     //摇晃结束
-    override open func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
 
         if BLoger.shared.shankShow {
             if #available(iOS 10.0, *) {
@@ -31,7 +31,7 @@ extension UIViewController {
     }
     
     //摇晃被意外终止
-    override open func motionCancelled(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override open func motionCancelled(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         
     }
 

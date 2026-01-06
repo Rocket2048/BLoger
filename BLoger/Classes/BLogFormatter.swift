@@ -39,7 +39,7 @@ enum BLogFlag: String {
     /// 返回一个简化的标记
     public static func flag(_ log: DDLogMessage) -> BLogFlag {
 
-        if let tag = log.tag as? String, tag == "none" {
+        if let tag = log.representedObject as? String, tag == "none" {
             return BLogFlag.none
         }
 

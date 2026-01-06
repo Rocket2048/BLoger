@@ -1,11 +1,12 @@
-use_frameworks!
+platform :ios, '12.0'
 
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'BLoger_Example' do
 
-  pod 'CocoaLumberjack/Swift'
-  pod 'SnapKit'
+  use_frameworks!
+
   pod 'BLoger', :path => '../'
 
 end
+

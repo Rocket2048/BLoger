@@ -16,7 +16,7 @@ public class BLoger {
     
     init() {
 
-        NotificationCenter.default.addObserver(self, selector: #selector(receivedRotation), name: .UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedRotation), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     deinit {
@@ -70,8 +70,8 @@ public class BLoger {
         // DDTTYLogger.sharedInstance.logFormatter = format
         // DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
 
-        DDASLLogger.sharedInstance.logFormatter = format
-        DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
+        DDOSLogger.sharedInstance.logFormatter = format
+        DDLog.add(DDOSLogger.sharedInstance) // ASL = Apple System Logs
         
         DDLog.add(fileLogger, with: .all)
         fileLogger.maximumFileSize = config.maximumFileSize

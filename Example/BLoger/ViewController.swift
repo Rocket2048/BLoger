@@ -38,7 +38,6 @@ class ViewController: UIViewController {
         
         BLoger.shared.showLogView()
         BLog("点击弹出Log窗口")
-
     }
     
     @IBAction func btnAction1(_ sender: Any) {
